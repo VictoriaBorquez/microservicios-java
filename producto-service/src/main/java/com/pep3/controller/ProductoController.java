@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.pep3.entity.Producto;
 import com.pep3.service.ProductoService;
 
+import model.CalcularNuevosPrecios;
+
 @RestController
 @RequestMapping("/producto")
 public class ProductoController {
@@ -42,4 +44,12 @@ public class ProductoController {
 		return ResponseEntity.ok(productoNew);
 	}
 	
+	@GetMapping("/calcularNuevosPrecios/{productoId}")
+	public ResponseEntity<List<CalcularNuevosPrecios>> getCalcularNuevosPrecios(@PathVariable("productoId") int productoId){
+		Producto producto = productoService.getProductoById(productoId);
+		if(producto == null)
+			return ResponseEntity.notFound().build();
+		List<CalcularNuevosPrecios> calcularNuevosPrecios = productoService.getCalcularNuevosPrecios(productoId);
+		return ResponseEntity.ok(calcularNuevosPrecios);
+	}
 }
