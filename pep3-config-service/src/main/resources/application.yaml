@@ -3,9 +3,10 @@ server:
 spring:
   cloud:
     config:
-      git:
-        default-label: main
-        uri: https://github.com/VictoriaBorquez/microservicios-java.git
-        search-paths: config-data
+      server:
+        git:
+          default-label: main
+          uri: https://github.com/VictoriaBorquez/microservicios-java
+          search-paths: config-data
   application:
     name: pep3-config-service
