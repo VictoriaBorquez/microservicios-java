@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import model.CalcularNuevosPrecios;
 
 
-@FeignClient(name = "calcularNuevosPrecios-service", url="http://localhost:8081/calcularNuevosPrecios/")
+@FeignClient(name = "calcularNuevosPrecios-service")
 @RequestMapping("/calcularNuevosPrecios")
 public interface CalcularNuevosPreciosFeignClient {
 	@PostMapping()

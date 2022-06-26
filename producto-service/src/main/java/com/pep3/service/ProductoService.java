@@ -39,7 +39,7 @@ public class ProductoService {
 	}
 	
 	public List<CalcularNuevosPrecios>getCalcularNuevosPrecios(int productoId){
-		List<CalcularNuevosPrecios> calcularNuevosPreciosList = restTemplate.getForObject("http://localhost:8081/calcularNuevosPrecios/byproducto/" + productoId, List.class);
+		List<CalcularNuevosPrecios> calcularNuevosPreciosList = restTemplate.getForObject("http://calcularNuevosPrecios-service/calcularNuevosPrecios/byproducto/" + productoId, List.class);
 		return calcularNuevosPreciosList;
 	}
 	
