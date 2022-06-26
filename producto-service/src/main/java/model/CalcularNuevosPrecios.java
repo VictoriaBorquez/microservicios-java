@@ -10,4 +10,10 @@ import lombok.NoArgsConstructor;
 public class CalcularNuevosPrecios {
 	private int precioDolar;
 	private int precioEuro;
+	private int productoId;
+	
+	public void setProductoId(int productoId2) {
+		// TODO Auto-generated method stub
+		
+	}
 }

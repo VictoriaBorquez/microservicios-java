@@ -1,6 +1,7 @@
 package com.pep3.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -51,5 +52,19 @@ public class ProductoController {
 			return ResponseEntity.notFound().build();
 		List<CalcularNuevosPrecios> calcularNuevosPrecios = productoService.getCalcularNuevosPrecios(productoId);
 		return ResponseEntity.ok(calcularNuevosPrecios);
+	}
+	
+	@PostMapping("/savecalcularNuevosPrecios/{productoId}")
+	public ResponseEntity<CalcularNuevosPrecios> saveCalcularNuevosPrecios(@PathVariable("productoId") int productoId, @RequestBody CalcularNuevosPrecios calcularNuevosPrecios){
+		if(productoService.getProductoById(productoId) == null)
+			return ResponseEntity.notFound().build();
+		CalcularNuevosPrecios calcularNuevosPreciosNew = productoService.saveCalcularNuevosPrecios(productoId, calcularNuevosPrecios);
+		return ResponseEntity.ok(calcularNuevosPrecios);
+	}
+	
+	@GetMapping("/getAll/{productoId}")
+	public ResponseEntity<Map<String, Object>> getAllPrecios(@PathVariable("productoId") int productoId){
+		Map<String, Object> result = productoService.getProductoAndPrecios(productoId);
+		return ResponseEntity.ok(result);
 	}
 }

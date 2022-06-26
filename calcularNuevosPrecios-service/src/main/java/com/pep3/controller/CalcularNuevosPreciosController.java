@@ -46,8 +46,6 @@ public class CalcularNuevosPreciosController {
 	@GetMapping("/byproducto/{productoId}")
 	public ResponseEntity<List<CalcularNuevosPrecios>> getByProductoId(@PathVariable("productoId") int productoId){
 		List<CalcularNuevosPrecios> calcularNuevosPreciosList = calcularNuevosPreciosService.byProductoId(productoId);
-		if(calcularNuevosPreciosList.isEmpty())
-			return ResponseEntity.noContent().build();
 		return ResponseEntity.ok(calcularNuevosPreciosList);
 	}
 
