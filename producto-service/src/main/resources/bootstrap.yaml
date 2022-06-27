@@ -5,3 +5,12 @@ spring:
     config:
       enabled: true
       uri: http://localhost:8081
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/pep3
+    username: springuser
+    password: ThePassword
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
