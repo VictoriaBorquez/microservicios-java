@@ -1,4 +1,5 @@
-package feignclients;
+/*
+package com.pep3.producto.feignclients;
 
 import java.util.List;
 
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import model.CalcularNuevosPrecios;
+import com.pep3.producto.model.CalcularNuevosPrecios;
 
 
 @FeignClient(name = "calcularNuevosPrecios-service")
@@ -21,3 +22,4 @@ public interface CalcularNuevosPreciosFeignClient {
 	@GetMapping("/byproducto/{productoId}")
 	List<CalcularNuevosPrecios> getCalcularNuevosPrecios(@PathVariable("productoId") int productoId);
 }
+*/

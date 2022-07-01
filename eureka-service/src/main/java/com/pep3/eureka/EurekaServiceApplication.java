@@ -1,4 +1,4 @@
-package com.pep3.configservice;
+package com.pep3.eureka;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

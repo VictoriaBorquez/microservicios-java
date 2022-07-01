@@ -1,31 +1,33 @@
-package com.pep3.service;
+package com.pep3.producto.service;
 
-import java.util.HashMap;
+//import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+//import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.stereotype.Service;//##
+//import org.springframework.web.client.RestTemplate;
+import com.pep3.producto.entity.Producto;
+//import com.pep3.producto.feignclients.CalcularNuevosPreciosFeignClient;
+//import com.pep3.producto.model.CalcularNuevosPrecios;
+import com.pep3.producto.repository.ProductoRepository;//##
 
-import com.pep3.entity.Producto;
-import com.pep3.repository.ProductoRepository;
-
-import feignclients.CalcularNuevosPreciosFeignClient;
-import model.CalcularNuevosPrecios;
 
 @Service
-public class ProductoService {
-	@Autowired
-	ProductoRepository productoRepository;
+public class ProductoService{
 	
 	@Autowired
-	RestTemplate restTemplate;
-	
-	@Autowired
-	CalcularNuevosPreciosFeignClient calcularNuevosPreciosFeignClient;
+	private ProductoRepository productoRepository;
 	
 	
-	public List<Producto> getAll(){
+	//@Autowired
+	//RestTemplate restTemplate;
+	
+	//@Autowired
+	//CalcularNuevosPreciosFeignClient calcularNuevosPreciosFeignClient;
+	
+	
+	public List<Producto> getAllProducto(){
 		return productoRepository.findAll();
 	}
 	
@@ -38,7 +40,10 @@ public class ProductoService {
 		return productoNew;
 	}
 	
-	public List<CalcularNuevosPrecios>getCalcularNuevosPrecios(int productoId){
+	//#AUN no de aca para abajo#
+	/*
+	
+	public List<CalcularNuevosPrecios> getCalcularNuevosPrecios(int productoId){
 		List<CalcularNuevosPrecios> calcularNuevosPreciosList = restTemplate.getForObject("http://calcularNuevosPrecios-service/calcularNuevosPrecios/byproducto/" + productoId, List.class);
 		return calcularNuevosPreciosList;
 	}
@@ -64,6 +69,7 @@ public class ProductoService {
 			result.put("CalcularNuevosPrecios", calcularNuevosPrecios);
 		return result;
 	}
+	*/
 
 	
 }

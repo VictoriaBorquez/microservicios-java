@@ -1,4 +1,4 @@
-package com.pep3.configservice;
+package com.pep3.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,10 +6,10 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class CalcularNuevosPreciosServiceApplication {
+public class GatewayServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CalcularNuevosPreciosServiceApplication.class, args);
+		SpringApplication.run(GatewayServiceApplication.class, args);
 	}
 
 }

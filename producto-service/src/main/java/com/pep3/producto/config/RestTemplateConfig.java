@@ -1,4 +1,4 @@
-package com.pep3.config;
+/*package com.pep3.producto.config;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
@@ -13,3 +13,4 @@ public class RestTemplateConfig {
 		return new RestTemplate();
 	}
 }
+*/
