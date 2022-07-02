@@ -1,21 +1,12 @@
-package com.pep3.producto.entity;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+package com.pep3.calcularNuevosPrecios.Model;
 
-@Entity
 public class Producto {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)	
+
 	private int id;
 	private String nombre;
 	private int precio_peso;
 	private int precio_dolar;
 	private int precio_euro;
-	
-	
 	
 	public int getId() {
 		return id;

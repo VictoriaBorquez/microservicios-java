@@ -23,9 +23,7 @@ public class ProductoController {
 	@Autowired
 	ProductoService productoService;
 	
-	
-	
-	@GetMapping(value = "")
+	@GetMapping("/all")
 	public ResponseEntity<List<Producto>> getAllProducto(){
 		List<Producto> productos = productoService.getAllProducto();
 		if(productos.isEmpty())
@@ -46,29 +44,7 @@ public class ProductoController {
 		Producto productoNew = productoService.save(producto);
 		return ResponseEntity.ok(productoNew);
 	}
-	//#aun no#
-	/*
-	@GetMapping("/calcularNuevosPrecios/{productoId}")
-	public ResponseEntity<List<CalcularNuevosPrecios>> getCalcularNuevosPrecios(@PathVariable("productoId") int productoId){
-		Producto producto = productoService.getProductoById(productoId);
-		if(producto == null)
-			return ResponseEntity.notFound().build();
-		List<CalcularNuevosPrecios> calcularNuevosPrecios = productoService.getCalcularNuevosPrecios(productoId);
-		return ResponseEntity.ok(calcularNuevosPrecios);
-	}
 	
-	@PostMapping("/savecalcularNuevosPrecios/{productoId}")
-	public ResponseEntity<CalcularNuevosPrecios> saveCalcularNuevosPrecios(@PathVariable("productoId") int productoId, @RequestBody CalcularNuevosPrecios calcularNuevosPrecios){
-		if(productoService.getProductoById(productoId) == null)
-			return ResponseEntity.notFound().build();
-		CalcularNuevosPrecios calcularNuevosPreciosNew = productoService.saveCalcularNuevosPrecios(productoId, calcularNuevosPrecios);
-		return ResponseEntity.ok(calcularNuevosPreciosNew);
-	}
-	
-	@GetMapping("/getAll/{productoId}")
-	public ResponseEntity<Map<String, Object>> getAllPrecios(@PathVariable("productoId") int productoId){
-		Map<String, Object> result = productoService.getProductoAndPrecios(productoId);
-		return ResponseEntity.ok(result);
-	}
-	*/
+
+
 }
