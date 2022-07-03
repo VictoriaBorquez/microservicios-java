@@ -3,6 +3,7 @@ package com.pep3.calcularNuevosPrecios.controller;
 import java.util.Arrays;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,7 @@ import com.pep3.calcularNuevosPrecios.service.CalcularNuevosPreciosService;
 
 @RestController
 @RequestMapping("/calcularNuevosPrecios")
+@CrossOrigin("*")
 public class CalcularNuevosPreciosController {
 	
 
