@@ -7,4 +7,9 @@ Incluye los siguientes componentes:
 - Config Server
 - API Gateway
 
-### WIP...
+## Arquitectura
+<table><tr><td>
+<p align="center">
+<img src="/images/Arquitectura.png" alt="Arquitectura.png" width="700"/>
+</p>
+</td></tr></table>
